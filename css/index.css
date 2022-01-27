@@ -1,0 +1,396 @@
+body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+div.background_img_container {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+div.background_img_container > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+}
+
+div.background_img_container_open {
+    display: block;
+}
+
+div.personal_info_list_container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(8, 154, 154, 43%);
+    width: 300px;
+    height: 100vh;
+}
+
+div.personal_info_list_container > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+div.personal_info_list_container > p {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_info_list_container > div.personal_info_list_choose_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+}
+
+div.personal_info_list_container > div.personal_info_list_choose_button > button {
+    margin: 8px 0;
+    padding: 8px 0;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    background-color: #fff;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_info_list_container > div.personal_info_list_choose_button > button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) inset;
+    background-color: rgba(1, 82, 82, 80%);
+    color: #fff;
+}
+
+div.personal_info_list_container > div.personal_info_list_choose_button > button.button_clicked {
+    cursor: not-allowed;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) inset;
+    background-color: rgba(1, 82, 82, 80%);
+    color: #fff;
+}
+
+div.personal_resume_header_and_personal_info_content {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+}
+
+div.personal_resume_header_and_personal_info_content > header {
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    /* background-color: rgba(8, 154, 154, 43%); */
+}
+
+div.personal_resume_header_and_personal_info_content > header > div.city_and_temperature {
+    display: flex;
+    flex-direction: column;
+}
+
+div.personal_resume_header_and_personal_info_content > header > div.city_and_temperature > p {
+    color: rgba(1, 82, 82, 80%);
+    margin: 0 8px;
+}
+
+div.personal_resume_header_and_personal_info_content > header > div.city_and_temperature > p:first-child {
+    font-size: 24px;
+}
+
+div.personal_resume_header_and_personal_info_content > header > img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+div.personal_resume_header_and_personal_info_content > div.personal_skill_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    width: 100%;
+}
+
+div.personal_resume_header_and_personal_info_content > div.personal_skill_container >ul {
+    padding: 0;
+    margin: 16px;
+    width: 600px;
+}
+
+div.personal_resume_header_and_personal_info_content > div.personal_skill_container >ul > p {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.personal_skill_container >ul > li {
+    list-style: none;
+    padding-left: 32px;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.about_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+div.personal_resume_header_and_personal_info_content > div.about_container > ul {
+    padding: 0;
+    margin: 16px;
+    width: 600px;
+}
+
+div.personal_resume_header_and_personal_info_content > div.about_container > ul > p {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.about_container > ul > li {
+    list-style: none;
+    padding-left: 32px;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.experience_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+div.personal_resume_header_and_personal_info_content > div.experience_container > ul {
+    padding: 0;
+    margin: 16px;
+    width: 600px;
+}
+
+div.personal_resume_header_and_personal_info_content > div.experience_container > ul > p {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.experience_container > ul > li {
+    list-style: none;
+    padding-left: 32px;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.project_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+div.personal_resume_header_and_personal_info_content > div.project_container > ul {
+    padding: 0;
+    margin: 16px;
+    width: 600px;
+}
+
+div.personal_resume_header_and_personal_info_content > div.project_container > ul > p {
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.project_container > ul > li {
+    list-style: none;
+    padding-left: 32px;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container > ul {
+    padding: 0;
+    margin: 16px;
+    width: 600px;
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container > ul > p {
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container > ul > li {
+    list-style: none;
+    padding-left: 32px;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container > ul > li > input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 4px;
+    outline: none;
+    border: 1px solid rgba(1, 82, 82, 80%);
+    border-radius: 10px;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container > ul > li > textarea.message_input_container {
+    resize: none;
+    outline: none;
+    border: 1px solid rgba(1, 82, 82, 80%);
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+    padding: 8px;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container > ul > li > textarea.text_content_too_long {
+    border: 1px solid red;
+    color: red;
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container > ul > li > button {
+    margin: 8px 0;
+    padding: 8px 16px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    background-color: #fff;
+    color: rgba(1, 82, 82, 80%);
+}
+
+div.personal_resume_header_and_personal_info_content > div.contact_container > ul > li > button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) inset;
+    background-color: rgba(1, 82, 82, 80%);
+    color: #fff;
+}
+
+@media screen and (max-width: 1980px) and (min-width: 1800px) {
+    div.personal_info_list_container {
+        width: 600px;
+    }
+
+    div.personal_info_list_container > img {
+        width: 200px;
+        height: 200px;
+    }
+
+    div.personal_info_list_container > div.personal_info_list_choose_button > button {
+        padding: 16px 0;
+    }
+}
+
+@media screen and (max-width: 1799.98px) and (min-width: 1600px) {
+    div.personal_info_list_container {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 1599.98px) and (min-width: 1400px) {
+    div.personal_info_list_container {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 800px) {
+    div.personal_info_list_container {
+        top: 0;
+        position: fixed;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        padding: 16px 0;
+    }
+
+    div.personal_info_list_container > img {
+        display: none;
+    }
+
+    div.personal_info_list_container > p {
+        margin-left: 32px;
+        margin: 0;
+    }
+
+    div.personal_info_list_container > div.personal_info_list_choose_button {
+        flex-direction: row;
+        width: 60%;
+        margin-left: 64px;
+    }
+
+    div.personal_info_list_container > div.personal_info_list_choose_button > button {
+        width: 100px;
+        margin: 0 8px;
+    }
+
+    div.personal_resume_header_and_personal_info_content {
+        width: 100%;
+    }
+
+    div.personal_resume_header_and_personal_info_content > header {
+        position: static;
+        margin-top: 100px;
+        /* left: 50%;
+        top: 100px; */
+        /* width: auto; */
+    }
+
+    div.personal_resume_header_and_personal_info_content > div.personal_skill_container {
+        margin-top: 0;
+    }
+
+    div.personal_resume_header_and_personal_info_content > div.personal_skill_container > ul {
+        width: 400px;
+    }
+
+    div.personal_resume_header_and_personal_info_content > div.about_container > ul {
+        width: 400px;
+    }
+
+    div.personal_resume_header_and_personal_info_content > div.experience_container > ul {
+        width: 400px;
+    }
+
+    div.personal_resume_header_and_personal_info_content > div.project_container > ul {
+        width: 400px;
+    }
+
+    div.personal_resume_header_and_personal_info_content > div.contact_container > ul {
+        width: 400px;
+    }
+}
