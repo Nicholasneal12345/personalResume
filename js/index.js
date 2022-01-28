@@ -352,9 +352,6 @@ window.addEventListener("load", function() {
                         直接聯絡我
                     </p>
                     <li>
-                        <input v-model = "sendFrom" type = "email" placeholder = "請輸入您的mail"/>
-                    </li>
-                    <li>
                         <input v-model = "sendTitle" type = "text" placeholder = "請輸入標題"/>
                     </li>
                     <li>
@@ -370,13 +367,13 @@ window.addEventListener("load", function() {
         data() {
             return {
                 messageValue: "",
-                sendFrom: "",
+                // sendFrom: "",
                 sendTitle: ""
             }
         },
         methods: {
             sendMessageToEmail() {
-                if(this.messageValue && this.sendFrom && this.sendTitle) {
+                if(this.messageValue && this.sendTitle) {
                     if(this.messageValue.length <= 500) {
                         // 放入載入動畫
                         document.querySelector("div.background_img_container").classList.add("background_img_container_open");
@@ -386,13 +383,13 @@ window.addEventListener("load", function() {
                         Email.send({
                             SecureToken: emailToken, // 放emailToken
                             To: '410203041@gms.ndhu.edu.tw', // 訊息會寄送到的位置
-                            From: this.sendFrom, // 發送訊息的郵件
+                            From: "jasonjason960133@gmail.com", // 發送訊息的郵件
                             Subject: this.sendTitle, // 訊息標題
                             Body: this.messageValue // 訊息內容
                         }).then(message => {
                                 alert(message);
                                 document.querySelector("div.background_img_container").classList.remove("background_img_container_open");
-                                this.sendFrom = "";
+                                // this.sendFrom = "";
                                 this.sendTitle = "";
                                 this.messageValue = "";
                             }
