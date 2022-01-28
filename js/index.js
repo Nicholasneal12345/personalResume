@@ -1,6 +1,6 @@
 window.addEventListener("load", function() {
     const weatherApiKey = "6625c26be6cd2ababbf5c28da79850a6"; // weatherApiKey
-    const emailToken = "55df45eb-e8dc-4fc9-b00c-73d8c6dce80e"; // emailToken
+    const emailToken = "e1ecaac1-3a29-4cda-8c02-81f1d6045556"; // emailToken
 
     // 個人資訊條列
     const personalInfoList = Vue.component('personalInfoList', {
@@ -352,6 +352,9 @@ window.addEventListener("load", function() {
                         直接聯絡我
                     </p>
                     <li>
+                        <input v-model = "sendFrom" type = "email" placeholder = "請輸入信箱"/>
+                    </li>
+                    <li>
                         <input v-model = "sendTitle" type = "text" placeholder = "請輸入標題"/>
                     </li>
                     <li>
@@ -367,13 +370,13 @@ window.addEventListener("load", function() {
         data() {
             return {
                 messageValue: "",
-                // sendFrom: "",
+                sendFrom: "",
                 sendTitle: ""
             }
         },
         methods: {
             sendMessageToEmail() {
-                if(this.messageValue && this.sendTitle) {
+                if(this.messageValue && this.sendFrom && this.sendTitle) {
                     if(this.messageValue.length <= 500) {
                         // 放入載入動畫
                         document.querySelector("div.background_img_container").classList.add("background_img_container_open");
@@ -381,15 +384,19 @@ window.addEventListener("load", function() {
                         // 這裡的Email method是從smtp.js裡來的
                         // smtp.js在index.html的地方以CDN的方式被引入進來了
                         Email.send({
-                            SecureToken: emailToken, // 放emailToken
+                            // SecureToken: emailToken, // 放emailToken  
+                            // 因為smtpJs的SecureToken沒辦法在gmail serve上使用，所以改成一般帳密的認證方式
+                            Host: 'smtp.gmail.com',
+                            Username: "tfd10404@gmail.com",
+                            Password: "tibame2022",
                             To: '410203041@gms.ndhu.edu.tw', // 訊息會寄送到的位置
-                            From: "jasonjason960133@gmail.com", // 發送訊息的郵件
+                            From: this.sendFrom, // 發送訊息的郵件
                             Subject: this.sendTitle, // 訊息標題
                             Body: this.messageValue // 訊息內容
                         }).then(message => {
                                 alert(message);
                                 document.querySelector("div.background_img_container").classList.remove("background_img_container_open");
-                                // this.sendFrom = "";
+                                this.sendFrom = "";
                                 this.sendTitle = "";
                                 this.messageValue = "";
                             }
